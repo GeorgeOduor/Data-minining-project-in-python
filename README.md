@@ -1,5 +1,3 @@
-# Data Minning Project in Python.
-
 
 <a id="top"></a> <br>
 # <div style="text-align: center"> Data mining Project in Python.</div>
@@ -73,24 +71,7 @@ import seaborn as sns
 %matplotlib inline
 ```
 
-
-```python
-%%HTML
-<style type="text/css">
-table.dataframe td, table.dataframe th {
-    border-style: solid;
-}
-```
-
-
-<style type="text/css">
-table.dataframe td, table.dataframe th {
-    border-style: solid;
-}
-
-
-
-The code above imports all the modules i will need in this project to manipulate the data.Allitle HTML tweaking give borders to my tables.
+The code above imports all the modules i will need in this project to manipulate the data.
  <a id="4"></a> <br>
 ## Data Ingestion
 
@@ -399,7 +380,7 @@ plt.title("Missing Values")
 
 
 
-![png](output_13_1.png)
+![png](output_12_1.png)
 
 
 The plot above shows evidently that there exists quite a number of missing values.Lets see how amny they are!
@@ -502,7 +483,7 @@ plt.title("Missing Values")
 
 
 
-![png](output_24_1.png)
+![png](output_23_1.png)
 
 
 Good!There are no missing values ,we are good to go.
@@ -878,7 +859,7 @@ sns.heatmap(pivot_table.iloc[:-1],annot=True,cmap='gist_stern',lw = 3,cbar = Fal
 
 
 
-![png](output_52_1.png)
+![png](output_51_1.png)
 
 
 <a id="82"></a> <br>
@@ -1070,6 +1051,10 @@ pivot_table.iloc[:-1][['January', 'February', 'March', 'April', 'May', 'June', '
   </tbody>
 </table>
 </div>
+
+
+
+
 [go to top](#top)
 <a id="83"></a> <br>
 ## Conclusion.
