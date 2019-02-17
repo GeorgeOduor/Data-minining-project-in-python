@@ -1,1 +1,2 @@
-# Data-minining-project-in-python
+# Data Minning Project in Python.
+
