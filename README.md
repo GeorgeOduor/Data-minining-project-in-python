@@ -666,6 +666,7 @@ Finally at the end of the project I will create a pivot table to populate the va
 ```python
 pivot_table = finaldata.pivot_table(values='Diagnosis',index="Visit location",columns="Visit month",margins_name='Average',aggfunc='count',margins=np.average,)
 pivot_table['Average'] = round(pivot_table['Average']/9)
+pivot_table.fillna(0,inplace = True)
 pivot_table
 ```
 
@@ -772,26 +773,26 @@ pivot_table
       <th>Kayole</th>
       <td>1.0</td>
       <td>4.0</td>
-      <td>NaN</td>
+      <td>0.0</td>
       <td>1.0</td>
       <td>2.0</td>
       <td>2.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
     </tr>
     <tr>
       <th>Pipeline</th>
-      <td>NaN</td>
+      <td>0.0</td>
       <td>2.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -854,7 +855,7 @@ sns.heatmap(pivot_table.iloc[:-1],annot=True,cmap='gist_stern',lw = 3,cbar = Fal
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x1a249e9390>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a23cc75c0>
 
 
 
@@ -995,28 +996,28 @@ pivot_table.iloc[:-1][['January', 'February', 'March', 'April', 'May', 'June', '
     <tr>
       <th>Kayole</th>
       <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
-      <td>NaN</td>
+      <td>0.0</td>
       <td>2.0</td>
       <td>2.0</td>
       <td>4.0</td>
-      <td>NaN</td>
+      <td>0.0</td>
       <td>1.0</td>
       <td>not  eligible</td>
     </tr>
     <tr>
       <th>Pipeline</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
       <td>2.0</td>
-      <td>NaN</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>not  eligible</td>
     </tr>
