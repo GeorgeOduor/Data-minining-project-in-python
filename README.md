@@ -56,6 +56,7 @@ Based on the applicat analysis, he or she should determine whether each medical 
 The project looks simple from the explanation but there is a catch way in between:-data is messy!.
 
 To tackle the project some packages will be handy in python.
+
  <a id="3"></a> <br>
 ## Importing libraries(tools of trade).
 
@@ -148,24 +149,6 @@ Also ,its imporrtant to note that the visit date in the patient paid visit sheet
 np.random.seed(3)
 PatientPaidVisit.sample(5)
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -262,11 +245,10 @@ PatientPaidVisit.sample(5)
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
-Just from the look of things we can spot a problem in the first column ,some dates are recorded as string literals.There are also missing values which some are understandable for anonymity and confidentiality prposes,common with medical data.
+Just from the look of things we can spot a problem in the first column ,some dates are recorded as string literals.There are also missing values which some are understandable for anonymity and confidentiality purposes, common with medical data.
 
 I have set a random seed to make this step reproducible.
 
@@ -276,23 +258,6 @@ np.random.seed(7)
 RegistrationData.sample(10)
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -354,7 +319,6 @@ RegistrationData.sample(10)
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -383,7 +347,7 @@ plt.title("Missing Values")
 ![png](output_12_1.png)
 
 
-The plot above shows evidently that there exists quite a number of missing values.Lets see how amny they are!
+The plot above shows evidently that there exists quite a number of missing values.Lets see how many they are!
 
 
 ```python
@@ -471,7 +435,7 @@ And now lets look check if there are still missing values.
 
 
 ```python
-sns.heatmap(pd.isnull(RegistrationData),yticklabels=False,cbar=False,cmap="coolwarm")
+sns.heatmap(pd.isnull(RegistrationData),yticklabels=False,cbar=False)
 plt.title("Missing Values")
 ```
 
@@ -525,7 +489,7 @@ def dateCorrector(cols):
 PatientPaidVisit['Visit date'] = PatientPaidVisit['Visit date'].apply(dateCorrector)
 ```
 
-Now lets look at this column in detail,you will see that the months are past **September** which was categoricaly stated in the busines value section by the job poster.This means that at some point the data clerks were starting with the months and then the dates.Infact in some instances the months are ambigouous.
+Now lets look at this column in detail,you will realize that the months are past **September** which was categorically stated in the business value section by the job poster.This means that at some point the data clerks were starting with the months and then the dates.Infact in some instances the months are ambiguous.
 
 
 ```python
@@ -562,7 +526,7 @@ PatientPaidVisit['Visit date'].dt.month.unique()
 
 
 
-The code above simply checks if month is more than septembe and land swaps the day and month position.The output shows the result.At thispoint its important to also create a column for month that i will use in the final pivot.
+The code above simply checks if month is more than september and land swaps the day and month position.The output shows the result.At this point its important to also create a column for month that i will use in the final pivot.
 
 
 [go to top](#top)
@@ -673,20 +637,7 @@ pivot_table
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -836,12 +787,11 @@ pivot_table
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
 <a id="81"></a> <br>
-**Which can visualised below this way**
+#### **Which can visualized below this way**
 
 
 [go to top](#top)
@@ -855,7 +805,7 @@ sns.heatmap(pivot_table.iloc[:-1],annot=True,cmap='gist_stern',lw = 3,cbar = Fal
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x1a23cc75c0>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a218027f0>
 
 
 
@@ -888,23 +838,6 @@ pivot_table['Eligibility']=pivot_table['Average'].apply(eligibility)
 pivot_table.iloc[:-1][['January', 'February', 'March', 'April', 'May', 'June', 'July','August', 'September','Average','Eligibility']]
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1051,8 +984,6 @@ pivot_table.iloc[:-1][['January', 'February', 'March', 'April', 'May', 'June', '
     </tr>
   </tbody>
 </table>
-</div>
-
 
 
 
@@ -1060,9 +991,9 @@ pivot_table.iloc[:-1][['January', 'February', 'March', 'April', 'May', 'June', '
 <a id="83"></a> <br>
 ## Conclusion.
 
-From the final output above ,its clear that **embakasi,githurai 45,kahawa west,umoja and zimmerman** health centers are eligible for the govenment programe.
+From the final output above ,its clear that **Embakasi,Githurai 45,Kahawa west,Umoja and Zimmerman** health centers are eligible for the government program.
 
-This work was originaly done by me(George) for the submission of a **Business inteligence analyst position** application at Penda Health,the best organization spearheading quality health to kenyans.
+This work was originaly done by me(George) for the submission of a **Business inteligence analyst position** application at Penda Health,the best organization spearheading quality health to Kenyans.
 
 
 [<div style="text-align: center;font-size:40px;text-decoration:underline;">THE END</div>](#top)
