@@ -993,7 +993,6 @@ pivot_table.iloc[:-1][['January', 'February', 'March', 'April', 'May', 'June', '
 
 From the final output above ,its clear that **Embakasi,Githurai 45,Kahawa west,Umoja and Zimmerman** health centers are eligible for the government program.
 
-This work was originaly done by me(George) for the submission of a **Business inteligence analyst position** application at Penda Health,the best organization spearheading quality health to Kenyans.
 
 
 [<div style="text-align: center;font-size:40px;text-decoration:underline;">THE END</div>](#top)
