@@ -57,6 +57,7 @@ The project looks simple from the explanation but there is a catch way in betwee
 
 To tackle the project some packages will be handy in python.
  <a id="3"></a> <br>
+ 
 ## Importing libraries(tools of trade).
 
 [go to top](#top)
@@ -90,6 +91,7 @@ table.dataframe td, table.dataframe th {
 
 The code above imports all the modules i will need in this project to manipulate the data.Allitle HTML tweaking give borders to my tables.
  <a id="4"></a> <br>
+ 
 ## Data Ingestion
 
 The data is provided in and an excel format.I will use pandas for this import into pythons working session.It is important that the data is given using a link to google docs available here.
@@ -105,10 +107,12 @@ RegistrationData = pd.read_excel('/Users/admin/Downloads/BI.xlsx',sheet_name='Re
 
 The code above loads the worksheets containing PatientPaidVisit and Registration data respectively into the woking environment.
  <a id="5"></a> <br>
+ 
 ## Data Exploration.
 
 After ingesting this data its important to take some time and inspect the data structure.
  <a id="51"></a> <br>
+ 
 ### Variables and observations(Shape)
 
 [go to top](#top)
@@ -155,6 +159,8 @@ We can see that the paid visit has 59091 observations and 12 variables while the
 
 Also ,its imporrtant to note that the visit date in the patient paid visit sheet is not stored as a datetime object.This is where we will start working.
  <a id="52"></a> <br>
+ 
+ 
 ## Sample look at the data.
 
 
@@ -419,6 +425,7 @@ print("{}% of dates of birth are missing".format(prop))
 
 The code above shows that there are 4919 missing dates of birth which make around 6% of all the data.Also we saw some patient codes repeated so only unique values will be used for the analysis.
  <a id="6"></a> <br>
+ 
 ## Data Preprocessing.
 
 In the above section we looked at what the data is made up of.In order to make correct analysis on data the data should obey the principles of a tidy data:
@@ -432,6 +439,7 @@ In the above section we looked at what the data is made up of.In order to make c
 
 1. Every cell is a data point.
  <a id="62"></a> <br>
+ 
 #### Registration data - Patient codes
 
 Since patient codes column is a very crucial variable in this data set I will spend some time inspecting at it.
@@ -472,6 +480,7 @@ RegistrationData['Patient Code'] = RegistrationData['Patient Code'].apply(correc
 ```
 
 <a id="63"></a> <br>
+
 #### Registration data-Missing Dates of Birth.
 
 Now its time to eliminate the rows with missing dates of birth because its obvious that the missing dates of births cannot be reconstructed unless for patients entered more than once,then drop duplicates.
@@ -506,6 +515,7 @@ plt.title("Missing Values")
 Good!There are no missing values ,we are good to go.
 
 <a id="64"></a> <br>
+
 #### Patient Paid Visit Data-Patient codes
 
 The patient codes will be treated the same way as the registration data.
@@ -516,6 +526,7 @@ PatientPaidVisit['Patient Code'] = PatientPaidVisit['Patient Code'].apply(correc
 ```
 
 <a id="65"></a> <br>
+
 #### Patient Paid Visit Data-Visit Date.
 
 We saw earlier that patient paid visit data date column had irregularites.The following actions will be applied to this column.
